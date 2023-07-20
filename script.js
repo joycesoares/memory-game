@@ -5,7 +5,7 @@ const icon = "icon";
 startGame();
 
 function startGame() {
-  initializeCards(game.createCardsFromTech());
+  initializeCards(game.createCardsFromFruits());
 }
 
 function initializeCards(cards) {

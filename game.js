@@ -46,32 +46,32 @@ let game = {
     return this.cards.filter((card) => !card.flipped).length == 0;
   },
 
-  createCardsFromTech: function () {
+  createCardsFromFruits: function () {
     this.cards = [];
     this.fruits.forEach((fruit) => {
-      this.cards.push(this.createPairFromTech(fruit));
+      this.cards.push(this.createPairFromFruits(fruit));
     });
     this.cards = this.cards.flatMap((pair) => pair);
     this.shuffleCards();
     return this.cards;
   },
 
-  createPairFromTech: function (fruit) {
+  createPairFromFruits: function (fruit) {
     return [
       {
-        id: this.createIdWithTech(fruit),
+        id: this.createIdWithFruit(fruit),
         icon: fruit,
         flipped: false
       },
       {
-        id: this.createIdWithTech(fruit),
+        id: this.createIdWithFruit(fruit),
         icon: fruit,
         flipped: false
       }
     ];
   },
 
-  createIdWithTech: function (fruit) {
+  createIdWithFruit: function (fruit) {
     return (fruit += parseInt(Math.random() * 1000));
   },
 
